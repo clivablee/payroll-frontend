@@ -1,12 +1,10 @@
 import React from 'react';
 import { FaBirthdayCake } from "react-icons/fa";
+import useDashboardStore from '../Store/DashboardStore';
 
 function HomeBirthdayCelebrant() {
-    const data = [
-        { id: 1, name: 'Vidal', age: '25', gender: 'Male' },
-        { id: 2, name: 'Cleeve', age: '25', gender: 'Male' },
-        { id: 3, name: 'Choi', age: '25', gender: 'Male' },
-    ];
+    const celebrants = useDashboardStore((state) => state.celebrants);
+  
 
     const cellClass = () => 'border-b border-gray-300 px-4 py-2 text-left';
 
@@ -28,13 +26,20 @@ function HomeBirthdayCelebrant() {
                 </thead>
 
                 <tbody>
-                    {data.map((user) => (
-                        <tr key={user.id} className='hover:bg-gray-100'>
-                            <td className={cellClass()}>{user.id}</td>
-                            <td className={cellClass()}>{user.name}</td>
-                            <td className={cellClass()}>{user.age}</td>
-                        </tr>
-                    ))}
+                {celebrants && celebrants.length > 0 ? (
+                            celebrants.map((celebrant, index) => (
+                                <tr className='hover:bg-gray-100' key={index}>
+                                    <td className={cellClass()}>{index + 1}</td> {/* ID (Index) */}
+                                    <td className={cellClass()}>{celebrant.employee_name}</td>
+                                    <td className={cellClass()}>{celebrant.department}</td>
+                                    <td className={cellClass()}>{celebrant.date_of_birth}</td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan={4} className={cellClass()}>No celebrants found.</td>
+                            </tr>
+                        )}
                 </tbody>
             </table>
             

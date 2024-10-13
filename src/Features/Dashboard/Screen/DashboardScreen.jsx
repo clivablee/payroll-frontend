@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import LayoutBody from '../../../Components/LayoutBody';
 import { FaHome } from "react-icons/fa";
-import HomeBirthdayCelebrant from './HomeBirthdayCelebrant';
-import HomeAnniversary from './HomeAnniversary';
-import HomePayrollSummary from './HomePayrollSummary';
-import HomeAttendanceSummary from './HomeAttendanceSummary';
+import HomeBirthdayCelebrant from '../Components/HomeBirthdayCelebrant';
+import HomeAnniversary from '../Components/HomeAnniversary';
+import HomePayrollSummary from '../Components/HomePayrollSummary';
+import HomeAttendanceSummary from '../Components/HomeAttendanceSummary';
+import useDashboardStore from '../Store/DashboardStore';
 
-const Home = () => {
+const DashboardScreen = () => {
+
+    const fetchCelebrants = useDashboardStore.getState().fetchCelebrants;
+
+    useEffect(() => {
+        fetchCelebrants();
+    }, []);
+
   return (
     <div className='relative h-full'>
         <LayoutBody 
@@ -36,4 +44,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default DashboardScreen;
