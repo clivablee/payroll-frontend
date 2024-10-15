@@ -5,7 +5,7 @@ const baseUrl = "http://localhost:5500/api/v1/";
 
 const useAuthStore = create((set) => ({
     
-    isLoggedIn: false,
+    isLoggedIn: !!window.localStorage.getItem("isLoggedIn"),
     passwordVisibility: false,
     isLoading: false,
     username: "",
@@ -28,6 +28,7 @@ const useAuthStore = create((set) => ({
 
             if (response.status === 200) {
                 set({ isLoggedIn: true })
+                window.localStorage.setItem("isLoggedIn", true);
             }
             
         } catch (e) {
@@ -35,8 +36,11 @@ const useAuthStore = create((set) => ({
         } finally {
             set({ isLoading: false })
         }
-        
     },
+    logout: async () => {
+        set({ isLoggedIn: false })
+        window.localStorage.removeItem("isLoggedIn");
+    }
   
 }));
 
