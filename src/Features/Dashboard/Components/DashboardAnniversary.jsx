@@ -5,21 +5,17 @@ import useDashboardStore from '../Store/DashboardStore';
 function HomeAnniversary() {
 
     const anniversaries = useDashboardStore((state) => state.anniversaries);
-
-
-    const data = [
-        { id: 1, name: 'Vidal', age: '25', gender: 'Male' },
-        { id: 2, name: 'Cleeve', age: '25', gender: 'Male' },
-        { id: 3, name: 'Choi', age: '25', gender: 'Male' },
-    ];
-
     const cellClass = () => 'border-b border-gray-300 px-4 py-2 text-left';
 
   return (
     <div className='w-full  mt-4 bg-white '>
         <div className='flex items-center p-4 border-b-4'>
             <MdWork className='text-2xl mr-2'/>
-            <p>Employees celebrating their anniversaries</p>
+            <p>Employees celebrating their anniversaries
+                <span className='m-1 bg-blue-600 text-white rounded-full px-2'>
+                    {anniversaries.length}
+                </span>
+            </p>
         </div>
 
         <div className='container mx-auto p-4'>
