@@ -1,22 +1,24 @@
 import React, { useEffect } from 'react'
 import LayoutBody from '../../../Components/LayoutBody';
 import { FaHome } from "react-icons/fa";
-import HomeBirthdayCelebrant from '../Components/HomeBirthdayCelebrant';
-import HomeAnniversary from '../Components/HomeAnniversary';
-import HomePayrollSummary from '../Components/HomePayrollSummary';
-import HomeAttendanceSummary from '../Components/HomeAttendanceSummary';
+import HomeBirthdayCelebrant from '../Components/DashboardBirthdayCelebrant';
+import HomeAnniversary from '../Components/DashboardAnniversary';
+import HomePayrollSummary from '../Components/DashboardPayrollSummary';
+import HomeAttendanceSummary from '../Components/DashboardAttendanceSummary';
 import useDashboardStore from '../Store/DashboardStore';
 
 const DashboardScreen = () => {
 
     const fetchCelebrants = useDashboardStore.getState().fetchCelebrants;
+    const fetchAnniversaries = useDashboardStore.getState().fetchAnniversaries;
 
     useEffect(() => {
         fetchCelebrants();
+        fetchAnniversaries();
     }, []);
 
   return (
-    <div className='relative h-full'>
+    <div className='relative '>
         <LayoutBody 
             children={
                 <>
@@ -34,12 +36,11 @@ const DashboardScreen = () => {
                         <HomeAttendanceSummary />
                     </div>
 
-                    <p className='text-sm absolute bottom-0 right-0 p-4'>
-                        Today is Wednesday, Octovty 02, 2024 04:51:24
-                    </p>
+                   
                 </>
             }
         />
+         
     </div>
   )
 }

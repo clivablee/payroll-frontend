@@ -21,7 +21,8 @@ function HomeBirthdayCelebrant() {
                     <tr>
                         <th className={cellClass()}>ID</th>
                         <th className={cellClass()}>Name</th>
-                        <th className={cellClass()}>Age</th>
+                        <th className={cellClass()}>Department</th>
+                        <th className={cellClass()}>Birthday</th>
                     </tr>
                 </thead>
 
@@ -29,7 +30,7 @@ function HomeBirthdayCelebrant() {
                 {celebrants && celebrants.length > 0 ? (
                             celebrants.map((celebrant, index) => (
                                 <tr className='hover:bg-gray-100' key={index}>
-                                    <td className={cellClass()}>{index + 1}</td> {/* ID (Index) */}
+                                    <td className={cellClass()}>{index + 1}</td>
                                     <td className={cellClass()}>{celebrant.employee_name}</td>
                                     <td className={cellClass()}>{celebrant.department}</td>
                                     <td className={cellClass()}>{celebrant.date_of_birth}</td>
