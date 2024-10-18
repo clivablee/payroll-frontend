@@ -13,9 +13,9 @@ function HomeBirthdayCelebrant() {
         <div className='flex items-center p-4 border-b-4'>
             <FaBirthdayCake className='text-2xl mr-2'/>
             <p>Birthday Celebrants
-                <span className='m-1 bg-blue-600 text-white rounded-full px-2'>
+                {/* <span className='m-1 bg-blue-600 text-white rounded-full px-2'>
                     {celebrants.length}
-                </span>
+                </span> */}
             </p>
         </div>
 

@@ -12,9 +12,9 @@ function HomeAnniversary() {
         <div className='flex items-center p-4 border-b-4'>
             <MdWork className='text-2xl mr-2'/>
             <p>Employees celebrating their anniversaries
-                <span className='m-1 bg-blue-600 text-white rounded-full px-2'>
+                {/* <span className='m-1 bg-blue-600 text-white rounded-full px-2'>
                     {anniversaries.length}
-                </span>
+                </span> */}
             </p>
         </div>
 

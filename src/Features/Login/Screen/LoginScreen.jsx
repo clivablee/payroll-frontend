@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import TextField from '../../../Components/TextField';
 import { FaUser, FaEye, FaEyeSlash } from 'react-icons/fa';
+
 import useAuthStore from '../Store/AuthStore';
 import { useNavigate } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 
 const Login = () => {
     const passwordVisibility = useAuthStore((state) => state.passwordVisibility);
@@ -12,6 +14,7 @@ const Login = () => {
     const setPassword = useAuthStore((state) => state.setPassword);
     const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
     const navigate = useNavigate();
+    const error = useAuthStore((state) => state.error);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -60,7 +63,7 @@ const Login = () => {
             </div> */}
 
             <button className='w-full bg-blue-500 text-white p-2 rounded-2xl' type="submit">Login</button>
-
+            <p className='text-red-500  md:text-center'>{error}</p>                
             {/* <div className="register-link">
                 <p>Don't have an account? <a href="#">Register</a></p>
             </div> */}

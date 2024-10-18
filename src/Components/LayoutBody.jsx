@@ -4,6 +4,7 @@ import Drawer from './Drawer'
 function LayoutBody({
     children
 }) {
+  
   return (
     <div className='flex'>
         <Drawer />
@@ -11,7 +12,7 @@ function LayoutBody({
           {children}
         </div>
         <p className=' text-sm absolute bottom-0 right-0 p-4'>
-          Today is Wednesday, Octovty 02, 2024 04:51:24
+          Today is Wednesday, October 02, 2024 04:51:24
         </p>
     </div>
   )

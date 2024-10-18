@@ -26,7 +26,6 @@ const DashboardScreen = () => {
                         <FaHome className='text-2xl mr-2'/>
                         <h1 className='text-2xl'>Home</h1>
                     </div>
-                    
                     <div className='flex flex-col md:flex-row md:space-x-4 overflow-auto'>
                         <HomeBirthdayCelebrant />
                         <HomePayrollSummary />
@@ -35,8 +34,6 @@ const DashboardScreen = () => {
                         <HomeAnniversary />
                         <HomeAttendanceSummary />
                     </div>
-
-                   
                 </>
             }
         />
