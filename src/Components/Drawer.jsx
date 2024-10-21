@@ -3,8 +3,7 @@ import { FaRegUserCircle  } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useAuthStore from '../Features/Login/Store/AuthStore';
 
-const Drawer = ({
-}) => {
+const Drawer = ({ toggleDrawer }) => {
 
     const logout = useAuthStore((state) => state.logout);
   return (
