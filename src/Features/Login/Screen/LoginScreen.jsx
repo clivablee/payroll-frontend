@@ -56,18 +56,8 @@ const Login = () => {
                     onClick={togglePasswordVisibility}
                 />
             </div>
-
-            {/* <div className="remember-forgot">
-                <label><input type="checkbox" name="remember-me" />Remember Me</label>
-                <a href="#">Forgot password?</a>
-            </div> */}
-
             <button className='w-full bg-blue-500 text-white p-2 rounded-2xl' type="submit">Login</button>
             <p className='text-red-500  md:text-center'>{error}</p>                
-            {/* <div className="register-link">
-                <p>Don't have an account? <a href="#">Register</a></p>
-            </div> */}
-              
         </form>
     </div>
   )
