@@ -15,7 +15,7 @@ const DashboardScreen = () => {
     useEffect(() => {
         fetchCelebrants();
         fetchAnniversaries();
-    }, []);
+    }, [fetchCelebrants, fetchAnniversaries]);
 
   return (
     <div className='relative '>
@@ -26,17 +26,22 @@ const DashboardScreen = () => {
                         <FaHome className='text-2xl mr-2'/>
                         <h1 className='text-2xl'>Home</h1>
                     </div>
+
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 '>
+                        <HomeBirthdayCelebrant />
+                        <HomePayrollSummary />
+                        <HomeAnniversary />
+                        <HomeAttendanceSummary />
+                    </div>
                     
-                    <div className='flex flex-col md:flex-row md:space-x-4 overflow-auto'>
+                    {/* <div className='flex flex-col md:flex-row md:space-x-4 overflow-auto'>
                         <HomeBirthdayCelebrant />
                         <HomePayrollSummary />
                     </div>
                     <div className='flex flex-col md:flex-row md:space-x-4 overflow-auto'>
                         <HomeAnniversary />
                         <HomeAttendanceSummary />
-                    </div>
-
-                   
+                    </div> */}
                 </>
             }
         />

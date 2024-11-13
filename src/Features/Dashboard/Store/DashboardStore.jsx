@@ -28,7 +28,7 @@ const fetchAnniversaries = async (set) => {
             const anniversaries = response.data.data.map((item) => ({
                 ...item
             }));
-            set({anniversaries});
+            set({anniversaries: anniversaries});
         }
 
     } catch (e) {

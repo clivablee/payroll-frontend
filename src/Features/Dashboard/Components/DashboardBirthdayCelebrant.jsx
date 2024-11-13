@@ -4,18 +4,17 @@ import useDashboardStore from '../Store/DashboardStore';
 
 function HomeBirthdayCelebrant() {
     const celebrants = useDashboardStore((state) => state.celebrants);
-  
 
     const cellClass = () => 'border-b border-gray-300 px-4 py-2 text-left';
 
   return (
-    <div className='flex flex-col h-full w-full mt-4 bg-white '>
+    <div className='flex flex-col w-full mt-4 bg-white'>
         <div className='flex items-center p-4 border-b-4'>
             <FaBirthdayCake className='text-2xl mr-2'/>
             <p>Birthday Celebrants
-                <span className='m-1 bg-blue-600 text-white rounded-full px-2'>
+                {/* <span className='m-1 bg-blue-600 text-white rounded-full px-2'>
                     {celebrants.length}
-                </span>
+                </span> */}
             </p>
         </div>
 

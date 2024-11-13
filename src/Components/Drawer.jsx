@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaRegUserCircle  } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Drawer = ({
 }) => {
@@ -28,8 +29,8 @@ const Drawer = ({
                 </div>
                 <ul>
                     <li className='mb-4'><a href="#" className='text-blue-600 hover:underline'>Home</a></li>
-                    <li className='mb-4'><a href="#" className='text-blue-600 hover:underline'>My Profile</a></li>
-                    <li className='mb-4'><a href="#" className='text-blue-600 hover:underline'>Employees</a></li>
+                    <li className='mb-4'><Link to="/profile" className='text-blue-600 hover:underline'>My Profile</Link></li>
+                    <li className='mb-4'><Link to="/employees" className='text-blue-600 hover:underline'>Employees</Link></li>
                     <li className='mb-4'><a href="#" className='text-blue-600 hover:underline'>Attendance</a></li>
                     <li className='mb-4'><a href="#" className='text-blue-600 hover:underline'>Payroll</a></li>
                 
