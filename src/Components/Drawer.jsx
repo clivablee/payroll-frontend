@@ -1,14 +1,23 @@
-import React from 'react'
-import { FaRegUserCircle  } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import useAuthStore from '../Features/Login/Store/AuthStore';
+import React from "react";
+import { FaRegUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import useAuthStore from "../Features/Login/Store/AuthStore";
+import { FaHome, FaUser, FaUsers, FaClock, FaMoneyBill } from "react-icons/fa";
 
 const Drawer = ({ toggleDrawer }) => {
+  const logout = useAuthStore((state) => state.logout);
 
-    const logout = useAuthStore((state) => state.logout);
+  const drawerData = [
+    { icon: FaHome, label: "Home", route: "/" },
+    { icon: FaUser, label: "Profile", route: "/profile" },
+    { icon: FaUsers, label: "Employees", route: "/employees" },
+    { icon: FaClock, label: "Attendance", route: "/attendance" },
+    { icon: FaMoneyBill, label: "Payroll", route: "/payroll" },
+  ];
+
   return (
-    <div className='relative'>
-        {/* <button
+    <div className="h-screen w-72">
+      {/* <button
             onClick={toggleDrawer}
             className='p-2 bg-blue-600 text-white'
         >
@@ -16,28 +25,42 @@ const Drawer = ({ toggleDrawer }) => {
 
         </button> */}
 
-        <nav className='flex flex-col justify-between h-full p-4'>
+      <nav className="flex flex-col justify-between h-full p-4">
+        <div>
+          <div className="flex items-center mb-4">
+            <FaRegUserCircle className="mr-2 text-4xl" />
             <div>
-                <div className='flex items-center mb-4'>
-                    <FaRegUserCircle  className='mr-2 text-4xl'/>
-                    <div>
-                        <p className='text-xl font-bold'>Vidal, Cleeve</p>
-                        <p className='text-sm font-light'>Jr. IT Programmer</p>
-                    </div>
-                </div>
-                <ul>
-                    <li className='mb-4'><Link to="/" className='text-blue-600 hover:underline'>Home</Link></li>
-                    <li className='mb-4'><Link to="/profile" className='text-blue-600 hover:underline'>My Profile</Link></li>
-                    <li className='mb-4'><Link to="/employees" className='text-blue-600 hover:underline'>Employees</Link></li>
-                    <li className='mb-4'><Link to="/attendance" className='text-blue-600 hover:underline'>Attendance</Link></li>
-                    <li className='mb-4'><a href="#" className='text-blue-600 hover:underline'>Payroll</a></li>
-                
-                </ul>
+              <p className="text-xl font-bold">Vidal, Cleeve</p>
+              <p className="text-sm font-light">Jr. IT Programmer</p>
             </div>
-           <Link className='text-red-600 hover:underline' onClick={() => {logout()}}>Logout</Link>
-        </nav>
-    </div>  
-  )
-}
+          </div>
+          <ul className="space-y-4 p-4 bg-gray-100 rounded-lg shadow-md">
+            {drawerData.map((data, index) => {
+              return (
+                <li className="flex items-center p-3 rounded-lg mb-4 transition-all duration-200 hover:bg-blue-100 ">
+                  <data.icon className="mr-3 text-blue-600" />
+                  <Link
+                    to={data.route}
+                    className="text-blue-600 hover hover:text-blue-800"
+                  >
+                    {data.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <Link
+          className="text-red-600 hover:underline"
+          onClick={() => {
+            logout();
+          }}
+        >
+          Logout
+        </Link>
+      </nav>
+    </div>
+  );
+};
 
-export default Drawer
+export default Drawer;
