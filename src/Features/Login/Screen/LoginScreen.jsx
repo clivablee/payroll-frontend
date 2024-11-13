@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import TextField from '../../../Components/TextField';
 import { FaUser, FaEye, FaEyeSlash } from 'react-icons/fa';
 
-import useAuthStore from '../Store/AuthStore';
 import { useNavigate } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
+import useAuthStore from '../Store/AuthStore';
 
 const Login = () => {
     const passwordVisibility = useAuthStore((state) => state.passwordVisibility);

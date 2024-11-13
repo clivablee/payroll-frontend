@@ -1,4 +1,3 @@
-import axios from "axios";
 import { create } from "zustand";
 import api from "../../../Utils/api";
 const baseUrl = "http://localhost:5500/api/v1/";
@@ -45,8 +44,6 @@ const useAuthStore = create((set) => ({
         window.localStorage.removeItem("isLoggedIn");
         console.log("logout mo to")
     }
-
-  
 }));
 
 export default useAuthStore;

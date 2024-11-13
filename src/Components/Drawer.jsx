@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaRegUserCircle  } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useAuthStore from '../Features/Login/Store/AuthStore';
 
 const Drawer = ({ toggleDrawer }) => {
 
