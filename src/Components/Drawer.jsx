@@ -2,12 +2,9 @@ import React from 'react'
 import { FaRegUserCircle  } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const Drawer = ({
-}) => {
+const Drawer = ({ toggleDrawer }) => {
 
-    const toggleDrawer = () => {
-    }
-
+    const logout = useAuthStore((state) => state.logout);
   return (
     <div className='relative'>
         {/* <button
@@ -36,9 +33,9 @@ const Drawer = ({
                 
                 </ul>
             </div>
-           <a href="#" className='text-red-600 hover:underline'>Logout</a>
+           <Link className='text-red-600 hover:underline' onClick={() => {logout()}}>Logout</Link>
         </nav>
-    </div>
+    </div>  
   )
 }
 

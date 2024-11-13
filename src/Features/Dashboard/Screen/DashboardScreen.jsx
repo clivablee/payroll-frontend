@@ -33,15 +33,6 @@ const DashboardScreen = () => {
                         <HomeAnniversary />
                         <HomeAttendanceSummary />
                     </div>
-                    
-                    {/* <div className='flex flex-col md:flex-row md:space-x-4 overflow-auto'>
-                        <HomeBirthdayCelebrant />
-                        <HomePayrollSummary />
-                    </div>
-                    <div className='flex flex-col md:flex-row md:space-x-4 overflow-auto'>
-                        <HomeAnniversary />
-                        <HomeAttendanceSummary />
-                    </div> */}
                 </>
             }
         />

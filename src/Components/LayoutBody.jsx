@@ -4,6 +4,7 @@ import Drawer from './Drawer'
 function LayoutBody({
     children
 }) {
+  
   return (
     <div className='h-screen flex'>
         <Drawer />
