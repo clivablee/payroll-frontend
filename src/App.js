@@ -7,6 +7,7 @@ import { Navigate } from "react-router-dom";
 import useAuthStore from "./Features/Login/Store/AuthStore"; // Assuming this is the path to your Zustand store
 import EmployeeScreen from "./Features/Employees/Screen/EmployeeScreen";
 import ProfileScreen from "./Features/Profile/Screen/ProfileScreen";
+import AttendanceScreen from "./Features/Attendance/Screen/AttendanceScreen";
 
 const ProtectedRoute = ({ element }) => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <ProfileScreen />,
+    errorElement: <ErrorScreen />
+  },
+  {
+    path: "/attendance",
+    element: <AttendanceScreen />,
     errorElement: <ErrorScreen />
   }
 ]);

@@ -29,7 +29,7 @@ const Drawer = ({ toggleDrawer }) => {
                     <li className='mb-4'><Link to="/" className='text-blue-600 hover:underline'>Home</Link></li>
                     <li className='mb-4'><Link to="/profile" className='text-blue-600 hover:underline'>My Profile</Link></li>
                     <li className='mb-4'><Link to="/employees" className='text-blue-600 hover:underline'>Employees</Link></li>
-                    <li className='mb-4'><a href="#" className='text-blue-600 hover:underline'>Attendance</a></li>
+                    <li className='mb-4'><Link to="/attendance" className='text-blue-600 hover:underline'>Attendance</Link></li>
                     <li className='mb-4'><a href="#" className='text-blue-600 hover:underline'>Payroll</a></li>
                 
                 </ul>

@@ -9,7 +9,7 @@ function EmployeeScreen() {
       <LayoutBody
         children={
           <>
-            <h1>All Employees</h1>
+            <h1 className="text-3xl font-bold">All Employees</h1>
             <p>View, search and add new employee</p>
             <EmployeeFilter />
             <EmployeeTable />
