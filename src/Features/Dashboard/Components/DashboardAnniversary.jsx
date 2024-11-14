@@ -30,7 +30,7 @@ function HomeAnniversary() {
                 </thead>
 
                 <tbody>
-                    { anniversaries && anniversaries.length > 0 ? (
+                    {anniversaries && anniversaries.length > 0 ? (
                         anniversaries.map((data, index) => (
                             <tr key={index} className='hover:bg-gray-100'>
                                 <td className={cellClass()}>{index}</td>
