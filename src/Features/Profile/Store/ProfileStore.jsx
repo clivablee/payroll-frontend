@@ -2,24 +2,27 @@ import { create } from "zustand";
 import api from "../../../Utils/api";
 
 const fetchProfile = async (set) => {
-    try {
-        console.log("Calling: ", api.defaults.baseURL + "birthday");
-        const response = await api.post("birthday");
-        console.log("Response: ", response.data);
-        if (response.status === 200) {
-            const celebrants = response.data.data.map((item) => ({
-                ...item,
-            }));
-            set({ celebrants });
-        }
-    } catch (e) {
-
+  try {
+    const response = await api.get("profile", {
+      withCredentials: true,
+    });
+    console.log("Response: ", response.data.data);
+    if (response.status === 200) {
+      const profile = response.data.data;
+      set({ profile });
     }
-}
+  } catch (e) {
+    console.log("Error: ", e);
+  }
+};
 
 const useProfileStore = create((set) => ({
-    isLoading: false,
-    setLoading: (isLoading) => set({ isLoading }),
-    fetchProfile: async () => {fetchProfile(set)},
-
+  isLoading: false,
+  profile: null,
+  setLoading: (isLoading) => set({ isLoading }),
+  fetchProfile: async () => {
+    fetchProfile(set);
+  },
 }));
+
+export default useProfileStore;

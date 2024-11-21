@@ -3,9 +3,11 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useAuthStore from "../Features/Login/Store/AuthStore";
 import { FaHome, FaUser, FaUsers, FaClock, FaMoneyBill } from "react-icons/fa";
+import useProfileStore from "../Features/Profile/Store/ProfileStore";
 
 const Drawer = ({ toggleDrawer }) => {
   const logout = useAuthStore((state) => state.logout);
+  const profile = useProfileStore((state) => state.profile);
 
   const drawerData = [
     { icon: FaHome, label: "Home", route: "/" },
@@ -17,7 +19,7 @@ const Drawer = ({ toggleDrawer }) => {
 
   return (
     <div className="h-screen w-72">
-      {/* <button
+      {/* <buttonbn   
             onClick={toggleDrawer}
             className='p-2 bg-blue-600 text-white'
         >
@@ -30,8 +32,10 @@ const Drawer = ({ toggleDrawer }) => {
           <div className="flex items-center mb-4">
             <FaRegUserCircle className="mr-2 text-4xl" />
             <div>
-              <p className="text-xl font-bold">Vidal, Cleeve</p>
-              <p className="text-sm font-light">Jr. IT Programmer</p>
+              <p className="text-xl font-bold">{profile && profile.emp_name}</p>
+              <p className="text-sm font-light">
+                {profile && profile.job_title}
+              </p>
             </div>
           </div>
           <ul className="space-y-4 p-4 bg-gray-100 rounded-lg shadow-md">

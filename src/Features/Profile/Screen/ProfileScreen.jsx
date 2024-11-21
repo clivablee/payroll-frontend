@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LayoutBody from "../../../Components/LayoutBody";
 import ProfileInfo from "../Components/ProfileInfo";
 import WorkInfo from "../Components/WorkInfo";
 import OthersInfo from "../Components/OthersInfo";
+import useProfileStore from "../Store/ProfileStore";
 
 function ProfileScreen() {
   const [activeTab, setActiveTab] = useState(0);
@@ -12,6 +13,7 @@ function ProfileScreen() {
     { label: "Work", content: <WorkInfo /> },
     { label: "Others", content: <OthersInfo /> },
   ];
+
 
   return (
     <LayoutBody
